@@ -10,4 +10,10 @@ import { Component } from '@angular/core';
     `,
   ],
 })
-export class WarningComponent {}
+export class WarningComponent {
+  userName: string = '';
+
+  onClickButton() {
+    this.userName = '';
+  }
+}

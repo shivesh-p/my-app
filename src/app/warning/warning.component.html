@@ -3,7 +3,14 @@
   <div class="alert alert-warning" role="alert">
     <h4 class="alert-heading">Alert Heading</h4>
     <p>Alert Content</p>
-    <hr>
+    <hr />
     <p class="mb-0">Alert Description</p>
   </div>
+</div>
+<div class="container">
+  <input type="text" [(ngModel)]="userName" />
+  <p class="mt-2">{{ userName }}</p>
+  <button class="btn btn-dark" [disabled]="!userName" (click)="onClickButton()">
+    Clear User
+  </button>
 </div>

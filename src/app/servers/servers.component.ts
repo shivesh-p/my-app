@@ -15,11 +15,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServersComponent implements OnInit {
   allowNewServer: boolean = false;
+  serverCreationStatus: string = 'No Server Created';
+  serverName: string = '2-Way Binding';
+  showServerCreation: boolean = false;
+  serverList = ['Server 1', 'Server 2'];
   constructor() {
     setTimeout(() => {
       this.allowNewServer = true;
     }, 2000);
   }
-
+  onClickCreateServer() {
+    this.serverList.push(this.serverName);
+    this.showServerCreation = true;
+    this.serverCreationStatus =
+      'Server was created. Name is ' + this.serverName;
+  }
+  onInputData(event: any) {
+    this.serverName = event.target.value;
+  }
   ngOnInit() {}
 }

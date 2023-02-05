@@ -3,5 +3,19 @@
   <div class="alert alert-success" role="alert">
     <strong>Alert Heading</strong> Some Word
   </div>
-
+</div>
+<div>
+  <button class="btn btn-info btn-outline-danger" (click)="onClickLog($event)">
+    Display Details
+  </button>
+  <p *ngIf="toggleDisplay">Secret Password == tuna</p>
+  <ul>
+    <li
+      *ngFor="let log of logArray"
+      [ngStyle]="{ background: getColorForBackground(log) }"
+      [ngClass]="{ white: getClassForLogs(log) }"
+    >
+      {{ log.target }}
+    </li>
+  </ul>
 </div>

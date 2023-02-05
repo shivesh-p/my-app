@@ -1,7 +1,20 @@
-<button class="btn btn-primary" [disabled]="!allowNewServer">Add Server</button>
+<button
+  class="btn btn-primary"
+  [disabled]="!allowNewServer"
+  (click)="onClickCreateServer()"
+>
+  Add Server
+</button>
+<input type="text" class="form-control mt-2" (input)="onInputData($event)" />
+
+<input type="text" class="form-control mt-2" [(ngModel)]="serverName" />
+
+<!-- <p class="mt-2">{{ serverName }}</p> -->
+<p *ngIf="showServerCreation; else noServer">{{ serverCreationStatus }}</p>
+<ng-template #noServer>
+  <p>No Server was created !</p>
+</ng-template>
+
 <p>
-  inside servers works!
-  <app-server></app-server>
-  <app-server></app-server>
-  this is what git change looks like
+  <app-server *ngFor="let server of serverList"></app-server>
 </p>

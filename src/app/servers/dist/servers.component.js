@@ -12,10 +12,23 @@ var ServersComponent = /** @class */ (function () {
     function ServersComponent() {
         var _this = this;
         this.allowNewServer = false;
+        this.serverCreationStatus = 'No Server Created';
+        this.serverName = '2-Way Binding';
+        this.showServerCreation = false;
+        this.serverList = ['Server 1', 'Server 2'];
         setTimeout(function () {
             _this.allowNewServer = true;
         }, 2000);
     }
+    ServersComponent.prototype.onClickCreateServer = function () {
+        this.serverList.push(this.serverName);
+        this.showServerCreation = true;
+        this.serverCreationStatus =
+            'Server was created. Name is ' + this.serverName;
+    };
+    ServersComponent.prototype.onInputData = function (event) {
+        this.serverName = event.target.value;
+    };
     ServersComponent.prototype.ngOnInit = function () { };
     ServersComponent = __decorate([
         core_1.Component({
