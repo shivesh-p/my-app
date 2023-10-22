@@ -1,13 +1,15 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
+      <p>{{ title }}</p>
       <h2>I am in the App Component</h2>
 
       <hr />
 
-      <app-servers></app-servers>
+      <!-- <app-servers></app-servers>
       <app-warning></app-warning>
-      <app-success></app-success>
+      <app-success></app-success> -->
+      <app-test-lifecycle [title]="title"></app-test-lifecycle>
     </div>
   </div>
 </div>

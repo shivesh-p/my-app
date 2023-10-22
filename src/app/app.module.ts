@@ -8,6 +8,11 @@ import { ServerComponent } from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
 import { SuccessComponent } from './success/success.component';
 import { WarningComponent } from './warning/warning.component';
+import { TestLifecycleComponent } from './test-lifecycle/test-lifecycle.component';
+import { HighlightDirective } from './directives/highlight.directive';
+import { BetterHighlightDirective } from './directives/better-highlight.directive';
+import { CustomIfDirective } from './directives/custom-if.directive';
+import { CustomDDDirective } from './directives/custom-dd.directive';
 
 @NgModule({
   declarations: [
@@ -16,6 +21,11 @@ import { WarningComponent } from './warning/warning.component';
     ServersComponent,
     SuccessComponent,
     WarningComponent,
+    TestLifecycleComponent,
+    HighlightDirective,
+    BetterHighlightDirective,
+    CustomIfDirective,
+    CustomDDDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

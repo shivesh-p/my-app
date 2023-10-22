@@ -1,0 +1,37 @@
+<!-- <p appHighlight #pElement>test-lifecycle works!</p> -->
+<p>{{ title }}</p>
+<button class="btn btn-outline-primary" (click)="showHide()">
+  Click to show/hide
+</button>
+<p
+  appBetterHighlight
+  #pElementBetter
+  defaultColor="yellow"
+  [highlightColor]="'dodgerblue'"
+>
+  test-lifecycle works!
+</p>
+<div class="dropdown" appCustomDD #r="appCustomDD">
+  <button
+    class="btn btn-secondary dropdown-toggle"
+    type="button"
+    id="triggerId"
+    data-bs-toggle="dropdown"
+    aria-haspopup="true"
+    aria-expanded="false"
+  >
+    Dropdown Button
+  </button>
+  <div
+    class="dropdown-menu"
+    aria-labelledby="triggerId"
+    [ngClass]="{ show: r.isOpen }"
+  >
+    <button class="dropdown-item" href="#">Action</button>
+    <button class="dropdown-item disabled" href="#">Disabled action</button>
+  </div>
+</div>
+<p *appCustomIf="show">
+  In case of strings only we can ommit the square brackets on the property we
+  want to bind through input of the directive
+</p>
